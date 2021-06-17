@@ -4,8 +4,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.net.HttpURLConnection;
-
 @RestController
 public class TestController {
 
@@ -16,6 +14,6 @@ public class TestController {
 
     @GetMapping(path = "/hello-world")
     public String HelloWorldString() {
-        return "HelloWorld";
+        return "Hello World! This is the SDA test controller!";
     }
 }
