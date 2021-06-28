@@ -46,7 +46,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .authenticated()
                 .and()
-                .httpBasic();
+                .httpBasic()
+                .and()
+                .requiresChannel()
+                .requestMatchers(r -> r.getHeader("X-Forwarded-Proto") != null). requiresSecure();
     }
 
     @Bean
